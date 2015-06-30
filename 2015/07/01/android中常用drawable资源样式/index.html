@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>android中常用drawable资源样式 | mtxc</title>
+  <meta name="author" content="mtxc">
+  
+  <meta name="description" content="总结以下android中以下7种常用资源样式，做下笔记：
+1、layer-list                 实现多张图片的叠加1234&amp;lt;layer-list&amp;gt;    &amp;lt;item android:drawable=&quot;@drawable/image1&quot;/&amp;gt;    &amp;lt;item android:drawable=&quot;@drawable/image2&quot;/&amp;gt;&amp;lt;/layer-list&amp;gt;">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="android中常用drawable资源样式"/>
+  <meta property="og:site_name" content="mtxc"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="mtxc" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">mtxc</a></h1>
+  <h2><a href="/">漫天星辰的博客</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="/tools">工具</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-30T19:59:21.000Z"><a href="/2015/07/01/android中常用drawable资源样式/">2015-07-01</a></time>
+      
+      
+  
+    <h1 class="title">android中常用drawable资源样式</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>总结以下android中以下7种常用资源样式，做下笔记：</p>
+<h3 id="1、layer-list_实现多张图片的叠加">1、layer-list                 实现多张图片的叠加</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">layer-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2、selector_实现按钮正常和按下状态">2、selector                   实现按钮正常和按下状态</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">selector</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/btn0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:state_pressed</span>=<span class="value">"true"</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/btn1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:state_focused</span>=<span class="value">"true"</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/btn2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">selector</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3、level-list_通过数值控制多个状态">3、level-list                     通过数值控制多个状态</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">level-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:minLevel</span>=<span class="value">"6"</span> <span class="attribute">android:maxLevel</span>=<span class="value">"10"</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:minLevel</span>=<span class="value">"12"</span> <span class="attribute">android:maxLevel</span>=<span class="value">"20"</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">level-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ImageView.setImageLevel(<span class="number">5</span>);  <span class="comment">//通过该方法改变level</span></span><br></pre></td></tr></table></figure>
+<h3 id="4、transition_两个状态互相渐变">4、transition                   两个状态互相渐变</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">transition</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image2"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TransitionDrawable drawable = (TransitionDrawable) imageView.getDrawable();</span><br><span class="line">drawable.startTransition(<span class="number">200</span>);   <span class="comment">//开始切换状态动画，并设置动画时间</span></span><br></pre></td></tr></table></figure>
+<h3 id="5、inset_为图片设置边界空白">5、inset                            为图片设置边界空白</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">inset</span></span><br><span class="line">    <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image"</span></span><br><span class="line">    <span class="attribute">android:insetTop</span>=<span class="value">"10dp"</span></span><br><span class="line">    <span class="attribute">android:insetLeft</span>=<span class="value">"10dp"</span></span><br><span class="line">    <span class="attribute">android:insetBottom</span>=<span class="value">"10dp"</span></span><br><span class="line">    <span class="attribute">android:insetRight</span>=<span class="value">"10dp"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="6、clip_进度条剪切">6、clip                                进度条剪切</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">clip</span></span><br><span class="line">    <span class="attribute">android:drawable</span>=<span class="value">"@drawable/image"</span></span><br><span class="line">    <span class="attribute">android:clipOrientation</span>=<span class="value">"horizontal"</span></span><br><span class="line">    <span class="attribute">android:gravity</span>=<span class="value">"left"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClipDrawable drawable = (ClipDrawable) imageView.getBackground();</span><br><span class="line">drawable.setLevel(<span class="number">5000</span>);   <span class="comment">//取值范围0~10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="7、shape_矩形渲染">7、shape                             矩形渲染</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">shape</span>    <span class="attribute">android:shape</span>=<span class="value">"rectangle"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--渐变色--&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="title">gradient</span></span><br><span class="line">        <span class="attribute">android:startColor</span>=<span class="value">"#000000"</span></span><br><span class="line">        <span class="attribute">android:endColor</span>=<span class="value">"#ffffff"</span></span><br><span class="line">        <span class="attribute">android:angle</span>=<span class="value">"45"</span>/&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--内容与边缘的间距--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">padding</span></span><br><span class="line">        <span class="attribute">android:left</span>=<span class="value">"5dp"</span></span><br><span class="line">        <span class="attribute">android:top</span>=<span class="value">"5dp"</span></span><br><span class="line">        <span class="attribute">android:right</span>=<span class="value">"5dp"</span></span><br><span class="line">        <span class="attribute">android:bottom</span>=<span class="value">"5dp"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--边缘线框的粗细和颜色--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">stroke</span></span><br><span class="line">        <span class="attribute">android:width</span>=<span class="value">"2dp"</span></span><br><span class="line">        <span class="attribute">android:color</span>=<span class="value">"#ffffff"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--圆角半径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">corners</span></span><br><span class="line">        <span class="attribute">android:radius</span>=<span class="value">"8dp"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/android/">android</a>
+  </div>
+
+        
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2015/07/01/Activity切换的动画效果/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zippera"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/android/">android</a><small>3</small></li>
+  
+    <li><a href="/categories/json/">json</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：杨鹏</li>
+<li>昵称：漫天星辰 | mtxc</li>
+<li>现状：西电在读本科</li>
+<li>QQ 号：710649878</li>
+<li>邮箱：710649878@qq.com</li>
+</ul>
+</div>
+
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src=""></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><section>
+Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from <a href="https://github.com/hexojs/hexo-theme-light">Light</a>, by <a href="/">zippera</a> 
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+<a href="https://github.com/mtxc" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="我的GitHub"></a>
