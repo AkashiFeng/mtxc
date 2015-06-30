@@ -19,7 +19,7 @@
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="http://zipperary.com/atom.xml" title="mtxc" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="mtxc" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
@@ -198,7 +198,8 @@
   </ul>
   <div class="clearfix"></div>
 </nav>
-<div class="clearfix"></div></header>
+<div class="clearfix"></div>
+</header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
   <article class="post">
@@ -219,24 +220,26 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-06-26T08:28:27.000Z"><a href="/2015/06/26/JsonArrayParseBean/">2015-06-26</a></time>
+        <time datetime="2015-06-30T19:10:02.000Z"><a href="/2015/07/01/Activity切换的动画效果/">2015-07-01</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/06/26/JsonArrayParseBean/">JsonArrayParseBean</a></h1>
+    <h1 class="title"><a href="/2015/07/01/Activity切换的动画效果/">Activity切换的动画效果</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h2 id="结合jackson框架，实现n层实体类数组的递归解析">结合jackson框架，实现n层实体类数组的递归解析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">         * 将对象数组转化成对应的ArrayList</span><br><span class="line">         * <span class="doctag">@param</span> a 对象数组</span><br><span class="line">         * <span class="doctag">@return</span> 转化后的ArrayList</span><br><span class="line">         */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">asList</span><span class="params">(T... a)</span> </span>&#123;</span><br><span class="line">                List&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;T&gt;();</span><br><span class="line">                Collections.addAll(list, a);</span><br><span class="line">                <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+        <p>Android中实现Activity之间切换的动画有两种方式:1.在代码中使用OverridePendingTransition方法。2.在AndroidManifest.xml文件中，通过主题来设置Activity间的切换动画。</p>
+<p>接下来，具体看看两种方式的实现:</p>
+<h3 id="1-使用代码实现">1.使用代码实现</h3><p>首先在xml文件中声明两个动画效果，例如:<br>fade.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="title">alpha</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>  </span><br><span class="line">       <span class="attribute">android:interpolator</span>=<span class="value">"@android:anim/accelerate_interpolator"</span>  </span><br><span class="line">       <span class="attribute">android:fromAlpha</span>=<span class="value">"0.0"</span> <span class="attribute">android:toAlpha</span>=<span class="value">"1.0"</span>  </span><br><span class="line">       <span class="attribute">android:duration</span>=<span class="value">"@android:integer/config_longAnimTime"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/06/26/JsonArrayParseBean/#more" class="more-link">阅读全文</a>
+            <a href="/2015/07/01/Activity切换的动画效果/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -267,11 +270,61 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-06-26T08:16:47.000Z"><a href="/2015/06/26/Android-LogUtil/">2015-06-26</a></time>
+        <time datetime="2015-06-26T08:28:27.000Z"><a href="/2015/06/26/Json数组多层解析/">2015-06-26</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/06/26/Android-LogUtil/">Android_LogUtil</a></h1>
+    <h1 class="title"><a href="/2015/06/26/Json数组多层解析/">Json数组多层解析</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="结合jackson框架，实现n层实体类数组的递归解析">结合jackson框架，实现n层实体类数组的递归解析</h2><p>jackson框架对于ArrayList的解析并不方便，只能够解析泛型为HashMap&lt;String, Object&gt;的ArrayList，对于ArrayList解析需传入Object[].class对象，解析出来为一个Object数组。</p>
+<p>本文使用递归的方式通过传入一个变长的实体类class数组，可以解析任何泛型的ArrayList，缺陷是同一级只能有一个ArrayList，但是可以有任意层次ArrayList的嵌套。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">         * 将对象数组转化成对应的ArrayList</span><br><span class="line">         * <span class="doctag">@param</span> a 对象数组</span><br><span class="line">         * <span class="doctag">@return</span> 转化后的ArrayList</span><br><span class="line">         */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">asList</span><span class="params">(T... a)</span> </span>&#123;</span><br><span class="line">                List&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;T&gt;();</span><br><span class="line">                Collections.addAll(list, a);</span><br><span class="line">                <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/06/26/Json数组多层解析/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-26T08:16:47.000Z"><a href="/2015/06/26/Android改进的Log打印工具/">2015-06-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/26/Android改进的Log打印工具/">Android改进的Log打印工具</a></h1>
   
 
     </header>
@@ -284,7 +337,7 @@
       
         
           <div class="alignleft">
-            <a href="/2015/06/26/Android-LogUtil/#more" class="more-link">阅读全文</a>
+            <a href="/2015/06/26/Android改进的Log打印工具/#more" class="more-link">阅读全文</a>
           </div>
         
         
@@ -316,7 +369,7 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/android/">android</a><small>1</small></li>
+    <li><a href="/categories/android/">android</a><small>2</small></li>
   
     <li><a href="/categories/json/">json</a><small>1</small></li>
   
