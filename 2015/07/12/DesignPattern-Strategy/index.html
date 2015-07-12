@@ -5,13 +5,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>json | mtxc</title>
+  <title>设计模式之策略模式 | mtxc</title>
   <meta name="author" content="mtxc">
+  
+  <meta name="description" content="策略模式定义了算法家族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化，不会影响到使用算法的客户
+
+组成
+
+抽象策略角色：通常由一个抽象类或一个接口实现，声明算法公共行为
+具体策略角色：封装了具体的算法或行为，继承自抽象策略类
+环境角色：用一个具体策略类配置，维护一个抽象策略对象的引用">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="设计模式之策略模式"/>
   <meta property="og:site_name" content="mtxc"/>
 
   
@@ -201,25 +209,138 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">json</h2>
-
-
-  <div class="archive">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-06-26T08:28:27.000Z"><a href="/2015/06/26/Json数组多层解析/">2015-06-26</a></time>
-            
-              <h1 class="title"><a href="/2015/06/26/Json数组多层解析/">Json数组多层解析</a></h1>
-            
-          </header>
-        </div>
-      </article>
+      <img src="">
     
   </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-12T09:23:50.000Z"><a href="/2015/07/12/DesignPattern-Strategy/">2015-07-12</a></time>
+      
+      
+  
+    <h1 class="title">设计模式之策略模式</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p><em>策略模式定义了算法家族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化，不会影响到使用算法的客户</em></p>
+</blockquote>
+<h3 id="组成">组成</h3><blockquote>
+<ul>
+<li><strong><code>抽象策略角色</code></strong>：通常由一个抽象类或一个接口实现，声明算法公共行为</li>
+<li><strong><code>具体策略角色</code></strong>：封装了具体的算法或行为，继承自抽象策略类</li>
+<li><strong><code>环境角色</code></strong>：用一个具体策略类配置，维护一个抽象策略对象的引用</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<h3 id="应用场景">应用场景</h3><blockquote>
+<ul>
+<li>多个类只区别在表现行为不同，可以使用Strategy模式，在运行时动态选择具体要执行的行为</li>
+<li>需要在不同情况下使用不同的策略(算法)，或者策略还可能在未来用其它方式来实现。</li>
+<li>对客户隐藏具体策略(算法)的实现细节，彼此完全独立。</li>
+</ul>
+</blockquote>
+<h3 id="优点">优点</h3><blockquote>
+<ul>
+<li>策略模式提供了管理相关的算法族的办法。策略类的等级结构定义了一个算法或行为族。恰当使用继承可以把公共的代码转移到父类里面，从而避免重复的代码。</li>
+<li>策略模式提供了可以替换继承关系的办法。继承可以处理多种算法或行为。如果不是用策略模式，那么使用算法或行为的环境类就可能会有一些子类，每一个子类提供一个不同的算法或行为。但是，这样一来算法或行为的使用者就和算法或行为本身混在一起。决定使用哪一种算法或采取哪一种行为的逻辑就和算法或行为的逻辑混合在一起，从而不可能再独立演化。继承使得动态改变算法或行为变得不可能。</li>
+<li>使用策略模式可以避免使用多重条件转移语句。多重转移语句不易维护，它把采取哪一种算法或采取哪一种行为的逻辑与算法或行为的逻辑混合在一起，统统列在一个多重转移语句里面，比使用继承的办法还要原始和落后。</li>
+</ul>
+</blockquote>
+<h3 id="缺点">缺点</h3><blockquote>
+<ul>
+<li>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。这就意味着客户端必须理解这些算法的区别，以便适时选择恰当的算法类。换言之，策略模式只适用于客户端知道所有的算法或行为的情况。</li>
+<li>策略模式造成很多的策略类，每个具体策略类都会产生一个新类。有时候可以通过把依赖于环境的状态保存到客户端里面，而将策略类设计成可共享的，这样策略类实例可以被不同客户端使用。换言之，可以使用享元模式来减少对象的数量。</li>
+</ul>
+</blockquote>
+<p><a href="https://github.com/mtxc/DesignPattern/tree/master/src/com/mtxc/pattern/strategy" target="_blank" rel="external"><strong>示例代码</strong></a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/DesignPattern/">DesignPattern</a>, <a href="/tags/Strategy/">Strategy</a>, <a href="/tags/策略模式/">策略模式</a>, <a href="/tags/设计模式/">设计模式</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/07/12/DesignPattern-SimpleFactory/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/07/03/ScrollView中嵌套ListView的滑动冲突问题/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zippera"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

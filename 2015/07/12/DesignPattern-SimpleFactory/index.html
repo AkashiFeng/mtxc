@@ -5,10 +5,10 @@
 <head>
   <meta charset="utf-8">
   
-  <title>DesignPattern_SimpleFactory.md | mtxc</title>
+  <title>设计模式之简单工厂模式 | mtxc</title>
   <meta name="author" content="mtxc">
   
-  <meta name="description" content="简单工厂模式简单工厂模式又称为静态工厂方法模式
+  <meta name="description" content="简单工厂模式又称为静态工厂方法模式
 简单工厂模式主要有三个角色：
 1、工厂角色：简单工厂模式的核心，负责所有产品创建的内部逻辑，被外部调用，创建对应产品
 2、抽象产品角色：工厂类创建的所有产品的父类，可以是一个抽象类，也可以是一个接口，定义该类产 品的公共属性及方法
@@ -17,7 +17,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="DesignPattern_SimpleFactory.md"/>
+  <meta property="og:title" content="设计模式之简单工厂模式"/>
   <meta property="og:site_name" content="mtxc"/>
 
   
@@ -225,17 +225,18 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-07-12T12:34:32.000Z"><a href="/2015/07/12/DesignPattern-SimpleFactory-md/">2015-07-12</a></time>
+        <time datetime="2015-07-12T12:34:32.000Z"><a href="/2015/07/12/DesignPattern-SimpleFactory/">2015-07-12</a></time>
       
       
   
-    <h1 class="title">DesignPattern_SimpleFactory.md</h1>
+    <h1 class="title">设计模式之简单工厂模式</h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="简单工厂模式">简单工厂模式</h1><p><em>简单工厂模式又称为静态工厂方法模式</em></p>
+        <blockquote>
+<p><em>简单工厂模式又称为静态工厂方法模式</em></p>
 <h3 id="简单工厂模式主要有三个角色：">简单工厂模式主要有三个角色：</h3><ul>
 <li>1、<strong><code>工厂角色</code></strong>：简单工厂模式的核心，负责所有产品创建的内部逻辑，被外部调用，创建对应产品</li>
 <li>2、<strong><code>抽象产品角色</code></strong>：工厂类创建的所有产品的父类，可以是一个抽象类，也可以是一个接口，定义该类产 品的公共属性及方法</li>
@@ -244,7 +245,8 @@
 <li><strong><code>优点：</code></strong><br>工厂类将所有产品对象的创建逻辑全部封装，用户在创建具体产品的时候不需要知道内部的判断逻辑，去除了客户端对具体产品的依赖，有利于整个软件体系结构的优化</li>
 <li><strong><code>缺点：</code></strong><br>由于工厂类集中了所有实例的创建，导致如果这个工厂类出现问题，所有客户端都会受到牵连，违背了“高内聚责任分配”的原则。如果需要增加产品，除了新增产品类外，还需要更改工厂类，添加switch分支，违背了“开放-封闭原则”。当具体产品类不断增多时候，可能会出现要求工厂类根据不同条件创建不同实例的需求。这种对条件的判断和对具体产品类型的判断交错在一起，很难避免模块功能的蔓延，对系统的维护和扩展非常不利</li>
 </ul>
-<p><strong><a href="https://github.com/mtxc/DesignPattern/tree/master/src/com/mtxc/pattern/simple_factory" target="_blank" rel="external">示例代码</a></strong></p>
+</blockquote>
+<p><a href="https://github.com/mtxc/DesignPattern/tree/master/src/com/mtxc/pattern/simple_factory" target="_blank" rel="external"><strong>示例代码</strong></a></p>
 
       
     </div>
@@ -288,7 +290,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
  <nav id="pagination" >
     
     
-    <a href="/2015/07/03/ScrollView中嵌套ListView的滑动冲突问题/" class="alignright next" >下一页</a>
+    <a href="/2015/07/12/DesignPattern-Strategy/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
@@ -329,7 +331,7 @@ var duoshuoQuery = {short_name:"zippera"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/DesignPattern/">DesignPattern</a><small>1</small></li>
+    <li><a href="/categories/DesignPattern/">DesignPattern</a><small>2</small></li>
   
     <li><a href="/categories/android/">android</a><small>5</small></li>
   
