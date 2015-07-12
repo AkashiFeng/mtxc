@@ -5,13 +5,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档：2015/6 | mtxc</title>
+  <title>DesignPattern_SimpleFactory.md | mtxc</title>
   <meta name="author" content="mtxc">
+  
+  <meta name="description" content="简单工厂模式简单工厂模式又称为静态工厂方法模式
+简单工厂模式主要有三个角色：
+1、工厂角色：简单工厂模式的核心，负责所有产品创建的内部逻辑，被外部调用，创建对应产品
+2、抽象产品角色：工厂类创建的所有产品的父类，可以是一个抽象类，也可以是一个接口，定义该类产 品的公共属性及方法
+3、具体产品角色：继承或实现抽象产品类的具体产品，这些类是工厂所创建的具体实例对象">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="DesignPattern_SimpleFactory.md"/>
   <meta property="og:site_name" content="mtxc"/>
 
   
@@ -201,37 +207,114 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2015/6</h2>
-
-
-  <div class="archive">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-06-26T08:28:27.000Z"><a href="/2015/06/26/Json数组多层解析/">2015-06-26</a></time>
-            
-              <h1 class="title"><a href="/2015/06/26/Json数组多层解析/">Json数组多层解析</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2015-06-26T08:16:47.000Z"><a href="/2015/06/26/Android改进的Log打印工具/">2015-06-26</a></time>
-            
-              <h1 class="title"><a href="/2015/06/26/Android改进的Log打印工具/">Android改进的Log打印工具</a></h1>
-            
-          </header>
-        </div>
-      </article>
+      <img src="">
     
   </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-12T12:34:32.000Z"><a href="/2015/07/12/DesignPattern-SimpleFactory-md/">2015-07-12</a></time>
+      
+      
+  
+    <h1 class="title">DesignPattern_SimpleFactory.md</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="简单工厂模式">简单工厂模式</h1><p><em>简单工厂模式又称为静态工厂方法模式</em></p>
+<h3 id="简单工厂模式主要有三个角色：">简单工厂模式主要有三个角色：</h3><ul>
+<li>1、<strong><code>工厂角色</code></strong>：简单工厂模式的核心，负责所有产品创建的内部逻辑，被外部调用，创建对应产品</li>
+<li>2、<strong><code>抽象产品角色</code></strong>：工厂类创建的所有产品的父类，可以是一个抽象类，也可以是一个接口，定义该类产 品的公共属性及方法</li>
+<li>3、<strong><code>具体产品角色</code></strong>：继承或实现抽象产品类的具体产品，这些类是工厂所创建的具体实例对象<a id="more"></a>
+<h3 id="简单工厂模式的优缺点：">简单工厂模式的优缺点：</h3></li>
+<li><strong><code>优点：</code></strong><br>工厂类将所有产品对象的创建逻辑全部封装，用户在创建具体产品的时候不需要知道内部的判断逻辑，去除了客户端对具体产品的依赖，有利于整个软件体系结构的优化</li>
+<li><strong><code>缺点：</code></strong><br>由于工厂类集中了所有实例的创建，导致如果这个工厂类出现问题，所有客户端都会受到牵连，违背了“高内聚责任分配”的原则。如果需要增加产品，除了新增产品类外，还需要更改工厂类，添加switch分支，违背了“开放-封闭原则”。当具体产品类不断增多时候，可能会出现要求工厂类根据不同条件创建不同实例的需求。这种对条件的判断和对具体产品类型的判断交错在一起，很难避免模块功能的蔓延，对系统的维护和扩展非常不利</li>
+</ul>
+<p><strong><a href="https://github.com/mtxc/DesignPattern/tree/master/src/com/mtxc/pattern/simple_factory" target="_blank" rel="external">示例代码</a></strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/DesignPattern/">DesignPattern</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/DesignPattern/">DesignPattern</a>, <a href="/tags/SimpleFactory/">SimpleFactory</a>, <a href="/tags/简单工厂模式/">简单工厂模式</a>, <a href="/tags/设计模式/">设计模式</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2015/07/03/ScrollView中嵌套ListView的滑动冲突问题/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zippera"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
